@@ -15,6 +15,10 @@ const userSchemas = new mongoose.Schema({
     type:String,
     required:true
 },
+ confrimPassword:{
+    type:String,
+    required:true
+},
 })
 const User = mongoose.model("User",userSchemas)
 export default User
