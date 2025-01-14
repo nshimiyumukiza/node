@@ -43,5 +43,25 @@ class UserController{
     }
    }
 
+   static async getUserById(req,res){
+      const id = req.params.id
+      const user = await User.findById(id)
+      if(!user){
+        return ErrorMessage(res,403,"user not found")
+      }else{
+        return SuccesseMessage(res,200, `User on this id ${id} successfuly retrived`,user)
+      }
+   } 
+
+   static async deleteUserById(req,res){
+    const id = req.params.id
+    const user = await User.findByIdAndDelete(id)
+    if(!user){
+      return ErrorMessage(res,403,"user not found")
+    }else{
+      return SuccesseMessage(res,200, `User on this id ${id} successfuly deleted`)
+    }
+ } 
+
 }
 export default UserController
