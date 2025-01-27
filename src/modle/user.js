@@ -15,6 +15,11 @@ const userSchemas = new mongoose.Schema({
  confrimPassword:{
     type:String,
 },
+role:{
+  type:String,
+  enum:["user","admin"],
+  default:"user"
+}
 })
 const User = mongoose.model("User",userSchemas)
 export default User
