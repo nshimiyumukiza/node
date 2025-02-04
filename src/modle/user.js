@@ -19,7 +19,7 @@ role:{
   type:String,
   enum:["user","admin"],
   default:"user"
-}
+},
 })
 const User = mongoose.model("User",userSchemas)
 export default User

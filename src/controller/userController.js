@@ -15,7 +15,7 @@ class UserController{
 
     const hashPassword = bcrypt.hashSync(req.body.password,10)
 
-     const user = await User.create({names,email,password:hashPassword,confrimPassword,role})
+     const user = await User.create({names,email,password:hashPassword,confrimPassword})
      if(!user){
         return ErrorMessage(res,403,"User not created")
      }else{
